@@ -1,10 +1,8 @@
-import Button from "@/app/ui/button";
-
+import Welcome from "./widgets/welcome";
 export default function Home() {
   return (
-    <>
-      <div>Bye world</div>
-      <Button name={"Bye"} />
-    </>
+    <main className="main_wrapper">
+      <Welcome />
+    </main>
   );
 }

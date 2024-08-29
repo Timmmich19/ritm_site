@@ -2,3 +2,35 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  /* colors */
+  --primary-color: #161618;
+  --second-color-A: #2e2c28;
+  --second-color-B: #010109;
+  --text-color-dark: #97928c;
+
+  /* sizes */
+  --header-heigth: 60px;
+}
+
+body {
+  background-color: var(--primary-color);
+}
+
+div {
+  background-color: var(--second-color-A);
+}
+
+header {
+  height: var(--header-heigth);
+  background-color: var(--second-color-A);
+}
+
+footer {
+  background-color: var(--second-color-B);
+  color: var(--text-color-dark);
+}
+
+.main_wrapper {
+  min-height: calc(100vh - var(--header-heigth));
+}
