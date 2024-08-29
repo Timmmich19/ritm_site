@@ -2,3 +2,29 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+    --primary-color: #161618;
+    --second-color-A: #2E2C28;
+    --second-color-B: #010109;
+    --text-color-dark: #97928C;
+}
+
+body {
+    background-color: var(--primary-color);
+}
+
+div {
+    background-color: var(--second-color-A);
+}
+
+header {
+    height: 60px;
+    background-color: var(--second-color-A);
+}
+
+footer {
+    background-color: var(--second-color-B);
+    color: var( --text-color-dark);
+}
+
+
