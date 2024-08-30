@@ -26,6 +26,8 @@ div {
 header {
   height: var(--header-heigth);
   background-color: var(--second-color-A);
+  display: flex;
+  gap: 16px;
 }
 
 footer {
@@ -37,7 +39,7 @@ footer {
   min-height: calc(100vh - var(--header-heigth));
 }
 
-.header-element {
+header * {
   display: flex;
   align-items: center;
   justify-content: center;
