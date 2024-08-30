@@ -8,13 +8,15 @@
   --second-color-A: #2e2c28;
   --second-color-B: #010109;
   --text-color-dark: #97928c;
+  --text-color-light: #ffffff;
 
   /* sizes */
-  --header-heigth: 60px;
+  --header-heigth: 64px;
 }
 
 body {
   background-color: var(--primary-color);
+  color: var(--text-color-light)
 }
 
 div {
@@ -33,4 +35,10 @@ footer {
 
 .main_wrapper {
   min-height: calc(100vh - var(--header-heigth));
+}
+
+.header-element {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
