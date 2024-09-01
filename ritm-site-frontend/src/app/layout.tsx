@@ -1,11 +1,9 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { general } from "@/app/ui/fonts";
 import "./globals.css";
 
 import Header from "@/app/static-components/header";
 import Footer from "@/app/static-components/footer";
-
-const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Ritm",
@@ -22,7 +20,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={`${general.className} antialiased`}>
         <Header />
         {children}
         <Footer />

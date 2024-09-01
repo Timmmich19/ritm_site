@@ -7,16 +7,19 @@
   --primary-color: #161618;
   --second-color-A: #2e2c28;
   --second-color-B: #010109;
-  --text-color-dark: #97928c;
-  --text-color-light: #ffffff;
+  --text-color-primary: #97928c;
+  --text-color-logo: #F2E1B4;
 
   /* sizes */
   --header-heigth: 64px;
+  --padding: 20px;
+  --border-radius: 10px;
 }
 
 body {
+  flex: auto;
   background-color: var(--primary-color);
-  color: var(--text-color-light)
+  color: var(--text-color-primary);
 }
 
 div {
@@ -25,22 +28,47 @@ div {
 
 header {
   height: var(--header-heigth);
-  background-color: var(--second-color-A);
-  display: flex;
   gap: 16px;
+  width: 100%;
+  position:fixed;
+  top: 0;
+  left: 0;
+  background-color: var(--second-color-A);
+  display:flex;
+  border-bottom: solid 2px var(--text-color-logo);
 }
 
 footer {
   background-color: var(--second-color-B);
   color: var(--text-color-dark);
+  padding: 10px;
 }
 
-.main_wrapper {
-  min-height: calc(100vh - var(--header-heigth));
+main {
+  flex:auto;
+  flex-direction: column;
+  min-height: 100vh;
+  height: fit-content;
+  padding: var(--padding);
+  padding-top: calc(var(--header-heigth) + var(--padding));
+  /* this gap not work */
+  gap: var(--padding);
 }
 
-header * {
+main > * {
+  border-radius: var(--border-radius);
+  width: 100%;
+  padding: var(--padding);
+}
+
+
+header > * {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.welcome-wrapper {
+  height: calc(100vh - var(--header-heigth) - var(--padding) * 2);
+
 }
