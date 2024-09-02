@@ -45,14 +45,13 @@ footer {
 }
 
 main {
-  flex:auto;
-  flex-direction: column;
   min-height: 100vh;
   height: fit-content;
   padding: var(--padding);
   padding-top: calc(var(--header-heigth) + var(--padding));
-  /* this gap not work */
-  gap: var(--padding);
+  
+  display: grid;
+  gap:  var(--padding)
 }
 
 main > * {
