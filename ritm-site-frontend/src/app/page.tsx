@@ -1,8 +1,10 @@
+import HaircutsList from "./widgets/haiructsList";
 import Welcome from "./widgets/welcome";
 export default function Home() {
   return (
-    <main className="main_wrapper">
+    <main>
       <Welcome />
+      <HaircutsList />
     </main>
   );
 }
