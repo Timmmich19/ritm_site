@@ -12,6 +12,8 @@
     "prepare": "husky"
   },
   "dependencies": {
+    "@mdi/js": "^7.4.47",
+    "@mdi/react": "^1.6.1",
     "next": "14.2.7",
     "react": "^18",
     "react-dom": "^18"

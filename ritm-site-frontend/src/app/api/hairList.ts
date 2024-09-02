@@ -2,10 +2,11 @@ import { Hairs } from "@/app/api/interfaces";
 
 const hairs: Hairs[] = [];
 
-for (let i = 0; i < 20; i++) {
+for (let id = 0; id < 20; id++) {
   hairs.push({
+    id,
     src: "/hair.png",
-    alt: `hair#${i + 1}`,
+    alt: `hair#${id + 1}`,
   });
 }
 
