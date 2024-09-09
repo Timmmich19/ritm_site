@@ -1,8 +1,17 @@
 import TelegramBot from "node-telegram-bot-api";
 
-const token = "7037460781:AAFIfcRf5_EmkyqCAy1DK9Xqf2BwWl8N_Xg";
+import dotenv from "dotenv";
+
+dotenv.config();
+
+const token = process.env.BOT_TOKEN;
+if (!token) {
+  throw new Error("BOT_TOKEN не задан");
+}
+
 const bot = new TelegramBot(token, { polling: true });
 
+// Добавляем обработчик события message только один раз
 bot.on("message", (msg) => {
   if (msg.text) {
     bot.sendMessage(msg.chat.id, `Вы написали: ${msg.text}`);
