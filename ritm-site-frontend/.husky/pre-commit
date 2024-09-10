@@ -1,2 +1,2 @@
-cd ./ritm-site-frontend
-npm run check
+cd ritm-site-frontend && npm run check
+exit 1
