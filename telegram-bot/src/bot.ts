@@ -11,7 +11,6 @@ if (!token) {
 
 const bot = new TelegramBot(token, { polling: true });
 
-// Добавляем обработчик события message только один раз
 bot.on("message", (msg) => {
   if (msg.text) {
     bot.sendMessage(msg.chat.id, `Вы написали: ${msg.text}`);
