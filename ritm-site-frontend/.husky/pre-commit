@@ -1,1 +1,2 @@
+cd ./ritm-site-frontend
 npm run check
