@@ -1,0 +1,54 @@
+# Node.js
+node_modules/
+npm-debug.log
+package-lock.json
+uploads
+# ENV
+.env
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+logs/
+*.log
+
+# IDE и редакторы
+.vscode/
+.idea/
+*.iml
+*.sublime-workspace
+
+# Другие файлы
+*.tmp
+*.bak
+*.swp
+*.swo
+
+# Папки с временными файлами
+tmp/
+temp/
+
+# Файлы с конфигурациями
+config.json
+config.js
+
+# Файлы с данными
+data/
+db.json
+
+# Файлы с ключами и токенами
+keys/
+tokens/
+
+# Другие файлы, которые не следует коммитить
+*.key
+*.pem
+*.cert
+*.crt
+*.pfx
+*.jks
+
+# Файлы, созданные при запуске бота
+bot.log

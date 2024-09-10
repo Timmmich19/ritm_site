@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { logo } from "@/app/ui/fonts";
+
 export default function Header() {
   return (
     <header>

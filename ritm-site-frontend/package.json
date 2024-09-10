@@ -6,26 +6,40 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
+    "dev-server": "ts-node -P tsconfig.server.json server/index.ts",
+    "build-server": "tsc -p tsconfig.server.json",
+    "start-server": "node dist-server/index.js",
+    "lint": "next lint --max-warnings 0",
     "format": "prettier --check 'src/**/*.{js,jsx,ts,tsx}'",
     "check": "npm run lint && npm run format",
-    "prepare": "husky"
+    "prepare": "cd .. && husky ritm-site-frontend/.husky"
   },
   "dependencies": {
+    "dotenv": "^16.4.5",
     "next": "14.2.7",
     "react": "^18",
     "react-dom": "^18"
   },
   "devDependencies": {
-    "@types/node": "^20",
+    "@types/cors": "^2.8.17",
+    "@types/express": "^4.17.21",
+    "@types/node": "^20.16.3",
     "@types/react": "^18",
     "@types/react-dom": "^18",
+    "@typescript-eslint/eslint-plugin": "^8.5.0",
+    "@typescript-eslint/parser": "^8.5.0",
     "autoprefixer": "^10.4.20",
-    "eslint": "^8",
-    "eslint-config-next": "14.2.7",
+    "eslint": "^8.57.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-next": "^14.2.7",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-import": "^2.30.0",
+    "eslint-plugin-prettier": "^5.2.1",
+    "eslint-plugin-react-hooks": "^4.6.2",
     "husky": "^9.1.5",
     "postcss": "^8.4.41",
+    "prettier": "^3.3.3",
     "tailwindcss": "^3.4.1",
-    "typescript": "^5"
+    "typescript": "^5.5.4"
   }
 }

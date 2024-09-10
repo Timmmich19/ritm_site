@@ -1,3 +1,3 @@
 export default function Welcome() {
-  return <div className={`welcome-wrapper`}></div>;
+  return <div className="welcome-wrapper" />;
 }

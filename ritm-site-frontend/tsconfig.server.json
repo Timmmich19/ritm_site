@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "target": "ESNext", // Версия ECMAScript
+    "module": "commonjs", // Модульная система
+    "strict": true, // Включение строгой проверки типов
+    "esModuleInterop": true, // Поддержка импорта CommonJS
+    "skipLibCheck": true, // Пропуск проверки типов в библиотеках
+    "forceConsistentCasingInFileNames": true, // Консистентность имен файлов
+    "outDir": "./dist/server", // Директория для выходных файлов сервера
+    "rootDir": "./ritm-site-frontend/server" // Корневая директория исходных файлов сервера
+  },
+  "include": ["ritm-site-frontend/server/**/*"], // Включение всех файлов .ts в папке server
+  "exclude": ["node_modules", "dist"] // Исключение папок node_modules и dist
+}
