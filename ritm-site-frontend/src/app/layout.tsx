@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { general } from "@/app/ui/fonts";
-import "./globals.css";
+import "./globals.sass";
 
 import Header from "@/app/static-components/header";
 import Footer from "@/app/static-components/footer";

@@ -9,7 +9,7 @@ const config: Config = {
   theme: {
     colors: {
       primaryText: "var(--text-color-primary)",
-      logoText: "var( --text-color-logo)",
+      logoText: "var(--text-logo-color)",
       primary: "var(--primary-color)",
       secondA: "var(--second-color-A)",
       secondB: "var(--second-color-B)",
