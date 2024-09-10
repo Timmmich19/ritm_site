@@ -1,5 +1,6 @@
 import HaircutsList from "./widgets/haiructsList";
 import Welcome from "./widgets/welcome";
+
 export default function Home() {
   return (
     <main>
