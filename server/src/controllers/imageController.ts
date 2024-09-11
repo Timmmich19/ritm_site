@@ -2,7 +2,7 @@ import { Request, Response } from "express";
 import fs from "fs";
 import path from "path";
 import sharp from "sharp";
-import { getNextFileNumber } from "../utils/fileUtils";
+import { getNextFileNumber, moveProcessedImagesToUploads, clearProcessedImagesDirectory } from "../utils/fileUtils";
 
 const uploadDir = path.join(__dirname, "..", "..", "uploads");
 const processedDir = path.join(__dirname, "..", "..", "processed_images");
@@ -44,7 +44,7 @@ export const formatImage = async (req: Request, res: Response) => {
         const processedImage = await sharp(resizedImageBuffer).resize(targetWidth, targetHeight, { fit: "cover" }).png().toBuffer();
 
         // Создаем уникальное имя для обработанного изображения
-        const nextFileNumber = getNextFileNumber(processedDir); // Ensure this is called with processedDir
+        const nextFileNumber = getNextFileNumber(processedDir, "processed_photo"); // Ensure this is called with processedDir
         const filename = `processed_photo${nextFileNumber}.png`;
         const filePath = path.join(processedDir, filename);
 
@@ -63,19 +63,26 @@ export const formatImage = async (req: Request, res: Response) => {
     return res.status(400).send({ error: "No images were processed successfully." });
   }
 
+  clearProcessedImagesDirectory(processedDir, 60000); // 60000
+
   res.json({ processedImages: results });
 };
 
 export const uploadImages = async (req: Request, res: Response) => {
-  if (!req.files || !Array.isArray(req.files)) {
-    return res.status(400).send({ error: "No images provided." });
+  if (!req.files || !Array.isArray(req.files) || req.files.length === 0) {
+    return res.status(400).send({ error: "No images uploaded." });
   }
 
   const results: { filename: string; url: string }[] = [];
 
   for (const file of req.files) {
+    if (!file.buffer) {
+      console.warn("File buffer is missing, skipping this file.");
+      continue; // Skip if the buffer is missing
+    }
+
     try {
-      const nextFileNumber = getNextFileNumber(uploadDir);
+      const nextFileNumber = getNextFileNumber(uploadDir, "photo");
       const filename = `photo${nextFileNumber}.png`;
       const filePath = path.join(uploadDir, filename);
 
@@ -89,6 +96,16 @@ export const uploadImages = async (req: Request, res: Response) => {
   }
 
   res.json(results);
+};
+
+export const moveProcessedImages = async (req: Request, res: Response) => {
+  try {
+    const result = await moveProcessedImagesToUploads(processedDir, uploadDir);
+    res.json(result); // Возвращаем результат, который содержит сообщение
+  } catch (error) {
+    console.error("Error moving processed images:", error);
+    res.status(500).send("Failed to move processed images.");
+  }
 };
 
 export const getImages = (req: Request, res: Response) => {
