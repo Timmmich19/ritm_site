@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { hairs } from "@/app/api/hairList";
+import hairs from "@/app/api/hairList";
 
 export default function HaircutsList() {
   return (
