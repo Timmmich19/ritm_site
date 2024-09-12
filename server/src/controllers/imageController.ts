@@ -63,7 +63,7 @@ export const formatImage = async (req: Request, res: Response) => {
     return res.status(400).send({ error: "No images were processed successfully." });
   }
 
-  clearProcessedImagesDirectory(processedDir, 60000); // 60000
+  clearProcessedImagesDirectory(processedDir, 270000); // 60000
 
   res.json({ processedImages: results });
 };
