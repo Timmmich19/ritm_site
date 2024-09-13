@@ -3,6 +3,7 @@ node_modules/
 npm-debug.log
 package-lock.json
 uploads
+processed_images
 # ENV
 .env
 
